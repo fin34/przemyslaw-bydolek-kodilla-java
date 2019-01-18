@@ -10,7 +10,7 @@ public class KodillaCourseApplication {
         SpringApplication.run(KodillaCourseApplication.class, args);
 
 
-        System.out.println("");
+        System.out.println("ffff");
     }
 
 
