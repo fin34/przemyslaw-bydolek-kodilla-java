@@ -7,15 +7,15 @@ public class TestingMain {
 
     public static void main(String[] args) {
 
-        SimpleUser simpleUser = new SimpleUser("theForumUser");
-
-        String result = simpleUser.getUsername();
-
-        if(result.equals("theForumUser")){
-            System.out.println("Test Ok");
-        } else {
-            System.out.println("Error!");
-        }
+//        SimpleUser simpleUser = new SimpleUser("theForumUser");
+//
+//        String result = simpleUser.getUsername();
+//
+//        if(result.equals("theForumUser")){
+//            System.out.println("Test Ok");
+//        } else {
+//            System.out.println("Error!");
+//        }
 
         int a = 4;
         int b = 3;
