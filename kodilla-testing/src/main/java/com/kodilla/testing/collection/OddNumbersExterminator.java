@@ -13,6 +13,7 @@ public class OddNumbersExterminator {
                 if (number % 2 == 0) {
                     evenNumbers.add(number);
                     System.out.println("ff");
+                    System.out.println("ff");
                 }
             }
             return evenNumbers;
