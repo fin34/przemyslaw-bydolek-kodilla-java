@@ -12,6 +12,7 @@ public class OddNumbersExterminator {
             for (Integer number : numbers) {
                 if (number % 2 == 0) {
                     evenNumbers.add(number);
+                    System.out.println("ff");
                 }
             }
             return evenNumbers;
