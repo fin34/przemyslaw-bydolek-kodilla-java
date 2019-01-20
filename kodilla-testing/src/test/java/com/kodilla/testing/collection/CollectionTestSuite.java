@@ -5,20 +5,6 @@ import java.util.List;
 
 public class CollectionTestSuite {
 
-//    public static void main(String[] args) {
-//
-//        ArrayList<Integer> example = new ArrayList<>();
-//
-//        example.add(4);
-//        example.add(5);
-//
-//        OddNumbersExterminator oddNumbersExterminator = new OddNumbersExterminator();
-//
-//      //  oddNumbersExterminator.exterminate(example);
-//
-//        System.out.println(oddNumbersExterminator.exterminate(example));
-//    }
-
     @Before
     public void before(){
         System.out.println("Test Case: begin");
