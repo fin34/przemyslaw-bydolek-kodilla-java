@@ -10,7 +10,7 @@ public class TestingMain {
         //Zad. 6.1
         System.out.println("Moduł 6. Wprowadzenie to testowania oprogramowania");
 
-        SimpleUser simpleUser = new SimpleUser("theForumUser");
+        SimpleUser simpleUser = new SimpleUser("theForumUser", "John Elton");
 
         String result = simpleUser.getUsername();
 

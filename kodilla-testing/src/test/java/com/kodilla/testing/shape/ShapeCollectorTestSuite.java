@@ -59,11 +59,5 @@ public class ShapeCollectorTestSuite {
         Shape shape;
         shape = shapeCollector.showFigures();
         Assert.assertEquals(square, shape);
-
-
-
     }
-
-
-
 }
