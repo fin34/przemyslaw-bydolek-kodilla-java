@@ -8,24 +8,28 @@ public class ShapeCollector {
     private ArrayList<Shape> listOfFigures = new ArrayList<>();
 
     public void addFigure(Shape shape){
-
         listOfFigures.add(shape);
     }
 
     public boolean removeFigure(Shape shape){
-
-        return false;
+        boolean result = false;
+        if (listOfFigures.contains(shape)){
+            listOfFigures.remove(shape);
+            result = true;
+        }
+        return result;
     }
 
     public Shape getFigure(int n) {
-
         return listOfFigures.get(n);
-
     }
 
-    public Shape showFigures() {
-
-        return shape;
+    public String showFigures() {
+        String showFigures= "";
+        for (Shape shape:listOfFigures) {
+            showFigures += shape.toString();
+        }
+        return showFigures;
     }
 
     public int getQuantityShapes(){

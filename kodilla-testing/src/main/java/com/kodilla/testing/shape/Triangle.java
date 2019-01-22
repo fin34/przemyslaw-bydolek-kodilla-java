@@ -21,4 +21,11 @@ public class Triangle implements Shape {
         double field = (lenghtSideTriangle*lenghtHeightLoweredToTheSide)/2;
         return field;
     }
+
+    @Override
+    public String toString() {
+        return name  +
+                ", lenght side Triangle=" + lenghtSideTriangle + ", Lenght Height lowered to the side=" + lenghtHeightLoweredToTheSide +
+                "\n";
+    }
 }

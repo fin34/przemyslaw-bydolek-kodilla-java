@@ -19,4 +19,11 @@ public class Circle implements Shape {
         double field = Math.PI *(wheelRadius*wheelRadius);
         return field;
     }
+
+    @Override
+    public String toString() {
+        return name  +
+                ", wheel radius=" + wheelRadius +
+                "\n";
+    }
 }

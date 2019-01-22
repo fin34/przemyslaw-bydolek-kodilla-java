@@ -11,8 +11,7 @@ public class Square implements Shape {
 
     @Override
     public String getShapeName() {
-
-        return null;
+        return name;
     }
 
     @Override
@@ -21,9 +20,10 @@ public class Square implements Shape {
         return field;
     }
 
-//    @Override
-//    public String toString() {
-//        return name  +
-//                " ,side lenght=" + sideLenght;
-//    }
+    @Override
+    public String toString() {
+        return name  +
+                ", side lenght=" + sideLenght +
+                "\n";
+    }
 }
