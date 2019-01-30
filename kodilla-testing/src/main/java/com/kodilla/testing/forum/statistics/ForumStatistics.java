@@ -11,30 +11,22 @@ public class ForumStatistics {
         this.statistics = statistics;
     }
 
-//    private int numberOfUsers;
-//    private int numberOfPosts;
-//    private int numberOfComments;
-//    private double averagePostsForUser;
-//    private double averageCommentsForUser;
-//    private double averageCommentsForPost;
-//
-//    public void calculateAdvStatistics(Statistics statistics){
-//        numberOfUsers = statistics.usersNames().size();
-//        numberOfPosts = statistics.postsCount();
-//        numberOfComments = statistics.commentsCount();
-//    }
+    public static double result(double a){
+        a*=100;
+        a=Math.round(a);
+        a/=100;
+        return a;
+    }
 
     public double getAveragePostsForUser() {
-        averagePostsForUser*= 100;
-        averagePostsForUser=Math.round(averagePostsForUser);
-        averagePostsForUser/=100;
+
         return averagePostsForUser;
     }
 
     public double getAverageCommentsForUser() {
-        averageCommentsForUser*= 100;
-        averageCommentsForUser=Math.round(averageCommentsForUser);
-        averageCommentsForUser/=100;
+//        averageCommentsForUser*= 100;
+//        averageCommentsForUser=Math.round(averageCommentsForUser);
+//        averageCommentsForUser/=100;
         return averageCommentsForUser;
     }
 

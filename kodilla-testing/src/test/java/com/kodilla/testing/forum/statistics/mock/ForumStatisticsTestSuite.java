@@ -47,7 +47,9 @@ public class ForumStatisticsTestSuite {
         System.out.println("Test for: User numbers = " + listUser.size() + " Posts count = "+ postsCount + " Comments count = " + commentsCount);
         Assert.assertEquals(0.15, forumStatistics.getAveragePostsForUser(), 0);
         Assert.assertEquals(1.00, forumStatistics.getAverageCommentsForUser(), 0);
-        Assert.assertEquals(6.67, forumStatistics.getAverageCommentsForPost(), 0);
+        Assert.assertEquals(6.67, forumStatistics.getAverageCommentsForPost(), 0.0001);
+
+        Assert.assertEquals(6.0, 6.0);
     }
 
     @Test
