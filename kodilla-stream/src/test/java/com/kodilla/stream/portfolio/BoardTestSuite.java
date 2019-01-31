@@ -3,8 +3,10 @@ package com.kodilla.stream.portfolio;
 import org.junit.Assert;
 import org.junit.Test;
 import java.time.LocalDate;
+import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import static java.util.stream.Collectors.toList;
 
@@ -136,17 +138,23 @@ public class BoardTestSuite {
         Assert.assertEquals(2, longTasks);
     }
 
-//    @Test
-//    public void testAddTaskListAverageWorkingOnTask(){
-//        Board project = prepareTestData();
-//        List<TaskList> inProgressTasks = new ArrayList<>();
-//        inProgressTasks.add(new TaskList("In progress"));
-//        int daysWorkingOnTask = project.getTaskLists().stream()
-//                .filter(inProgressTasks::contains)
-//                .flatMap(t1->t1.getTasks().stream())
-//                .map(t->t.getCreated().getDayOfYear()-LocalDate.now().getDayOfYear())
-//
-//
-//        System.out.println(daysWorkingOnTask);
-//    }
+    @Test
+    public void testAddTaskListAverageWorkingOnTask(){
+        Board project = prepareTestData();
+        List<TaskList> inProgressTasks = new ArrayList<>();
+        inProgressTasks.add(new TaskList("In progress"));
+        long daysWorkingOnTask = project.getTaskLists().stream()
+                .filter(inProgressTasks::contains)
+                .flatMap(x->x.getTasks().stream())
+                .mapToLong(y->y.getCreated().until(LocalDate.now(), ChronoUnit.DAYS))
+                .sum();
+
+        long quantityTasks = project.getTaskLists().stream()
+                .filter(inProgressTasks::contains)
+                .flatMap(x->x.getTasks().stream())
+                .count();
+
+        double averageTimeOfTaskCompletion = (double) daysWorkingOnTask/quantityTasks;
+        Assert.assertEquals(10.00, averageTimeOfTaskCompletion, 0.01);
+    }
 }
