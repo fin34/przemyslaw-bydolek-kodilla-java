@@ -5,11 +5,14 @@ public interface ArrayOperations {
 
     static double getAverage(int[] numbers){
 
-        System.out.println("Elementy tablicy:");
-        IntStream getNumbers = IntStream.range(0, numbers.length).map(x->numbers[x]);
-        getNumbers.forEach(System.out::println);
+        if(numbers.length>0) {
+            System.out.println("Elementy tablicy:");
+            IntStream getNumbers = IntStream.range(0, numbers.length).map(x -> numbers[x]);
+            getNumbers.forEach(System.out::println);
 
-        double getAverage = IntStream.range(0, numbers.length).map(x->numbers[x]).average().getAsDouble();
-        return getAverage;
+            double getAverage = IntStream.range(0, numbers.length).map(x -> numbers[x]).average().getAsDouble();
+            return getAverage;
+        }
+        return 0;
     }
 }
