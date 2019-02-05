@@ -6,13 +6,13 @@ import java.util.Map;
 public class FindFilghtLogic {
 
     public Boolean findFilght(Flight flight) throws RouteNotFoundException {
-        Map<String, Boolean> flightMap = new HashMap<>();
-        flightMap.put("Barcelona", true);
-        flightMap.put("Rome", false);
-        if(!flightMap.containsKey(flight.getArrivalAirport())) {
+        Map<String, Boolean> flightsMap = new HashMap<>();
+        flightsMap.put("Barcelona", true);
+        flightsMap.put("Rome", false);
+        if(!flightsMap.containsKey(flight.getArrivalAirport())) {
             throw new RouteNotFoundException();
         }else {
-            return flightMap.get(flight.getArrivalAirport());
+            return flightsMap.get(flight.getArrivalAirport());
         }
 
     }
