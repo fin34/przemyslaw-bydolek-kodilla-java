@@ -19,6 +19,7 @@ public class FileReader {
         } catch (IOException e) {
             throw new FileReaderException();
         } finally {
+
             System.out.println("Wykonam się zawsze!!!");
         }
     }
