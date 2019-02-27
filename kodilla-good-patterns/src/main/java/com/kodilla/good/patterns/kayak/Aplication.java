@@ -5,7 +5,6 @@ public class Aplication {
     public static void main(String[] args) {
 
         FlightList flightList = new FlightList();
-        flightList.allFlight();
         FlightSearch flightSearch = new FlightSearch(flightList);
         flightSearch.allFlightsFromCity("Poznań");
         System.out.println();

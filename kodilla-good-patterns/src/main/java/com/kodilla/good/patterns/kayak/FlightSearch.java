@@ -17,7 +17,7 @@ public class FlightSearch {
     public void allFlightsFromCity(String city) {
 
         System.out.println("Miasta do których polecimy z miasta:  " + city);
-        flightList.allFlight().entrySet().stream()
+        flightList.getMapOfFlight().entrySet().stream()
                 .filter(x -> x.getKey().equalsIgnoreCase(city))
                 .map(y -> y.getValue().toString())
                 .forEach(System.out::println);
@@ -26,7 +26,7 @@ public class FlightSearch {
     public void directAllFlightsToCity(String city) {
 
         System.out.println("Miasta z których polecimy do miasta: " + city);
-        for (Map.Entry<String, Set<String>> entry : flightList.allFlight().entrySet()) {
+        for (Map.Entry<String, Set<String>> entry : flightList.getMapOfFlight().entrySet()) {
             String result = entry.getValue().stream()
                     .filter(x -> x.equalsIgnoreCase(city))
                     .collect(Collectors.joining());
@@ -38,7 +38,7 @@ public class FlightSearch {
 
     public void allFlightsToCity(String city) {
         List<String> cityFly = new ArrayList<>();
-        for (Map.Entry<String, Set<String>> entry : flightList.allFlight().entrySet()) {
+        for (Map.Entry<String, Set<String>> entry : flightList.getMapOfFlight().entrySet()) {
            String result = entry.getValue().stream()
                     .filter(x -> x.equalsIgnoreCase(city))
                     .collect(Collectors.joining());
@@ -51,11 +51,10 @@ public class FlightSearch {
             for (int j = 0; j < cityFly.size() ; j++) {
                 String first = cityFly.get(i);
                 String second = cityFly.get(j);
-                if(flightList.allFlight().get(second).contains(first)){
+                if(flightList.getMapOfFlight().get(second).contains(first)){
                     System.out.println("lot pośredni do " + city + ": " + first + " " + second + " " + city);
                 }
             }
-
         }
     }
 }

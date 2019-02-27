@@ -6,7 +6,7 @@ public class FlightList {
 
     private Map<String, Set<String>> mapOfFlight = new HashMap<>();
 
-    public Map<String, Set<String>> allFlight(){
+    public FlightList() {
         Set<String> flightsFromPoznan = new HashSet<>();
         flightsFromPoznan.add("Wrocław");
         flightsFromPoznan.add("Kraków");
@@ -25,14 +25,14 @@ public class FlightList {
         Set<String> flightsFromKatowice = new HashSet<>();
         flightsFromKatowice.add("Warszawa");
         flightsFromKatowice.add("Poznań");
-        Map<String, Set<String>> allFlights = mapOfFlight;
-        allFlights.put("Poznań", flightsFromPoznan);
-        allFlights.put("Warszawa", flightsFromWarsaw);
-        allFlights.put("Gdańsk", flightsFromGdansk);
-        allFlights.put("Katowice", flightsFromKatowice);
 
-        return allFlights;
+        mapOfFlight.put("Poznań", flightsFromPoznan);
+        mapOfFlight.put("Warszawa", flightsFromWarsaw);
+        mapOfFlight.put("Gdańsk", flightsFromGdansk);
+        mapOfFlight.put("Katowice", flightsFromKatowice);
     }
 
-
+    public Map<String, Set<String>> getMapOfFlight() {
+        return mapOfFlight;
+    }
 }
