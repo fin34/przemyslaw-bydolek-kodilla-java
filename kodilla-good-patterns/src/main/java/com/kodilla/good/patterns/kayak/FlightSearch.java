@@ -1,9 +1,6 @@
 package com.kodilla.good.patterns.kayak;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class FlightSearch {
@@ -27,10 +24,10 @@ public class FlightSearch {
 
         System.out.println("Miasta z których polecimy do miasta: " + city);
         for (Map.Entry<String, Set<String>> entry : flightList.getMapOfFlight().entrySet()) {
-            String result = entry.getValue().stream()
-                    .filter(x -> x.equalsIgnoreCase(city))
-                    .collect(Collectors.joining());
-            if (result.equalsIgnoreCase(city)) {
+            boolean cityExist = entry.getValue().stream()
+                    .anyMatch(x -> x.equalsIgnoreCase(city));
+//                    .collect(Collectors.joining());
+            if (cityExist) {
                 System.out.println(entry.getKey());
             }
         }
