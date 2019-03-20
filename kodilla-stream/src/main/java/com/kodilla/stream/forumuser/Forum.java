@@ -2,10 +2,12 @@ package com.kodilla.stream.forumuser;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public final class Forum {
 
     private final List<ForumUser> listOfUser = new ArrayList<>();
+
 
     public Forum() {
 
@@ -15,6 +17,8 @@ public final class Forum {
         listOfUser.add(new ForumUser(4, "Ania", 'F', 2002, 10, 20, 2));
         listOfUser.add(new ForumUser(5, "Alina", 'F', 1990, 10, 30, 0));
         listOfUser.add(new ForumUser(6, "Alicja", 'M', 2000, 1, 30, 5));
+
+
     }
 
     public List<ForumUser> getListOfUser() {

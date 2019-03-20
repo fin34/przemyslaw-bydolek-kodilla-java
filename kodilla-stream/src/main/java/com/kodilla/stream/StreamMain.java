@@ -18,6 +18,10 @@ public class StreamMain {
         poemBeautifier.beautify("Domek", word -> word.toLowerCase());
         poemBeautifier.beautify("aabbaabbaa", word -> word.replace("a", "A"));
 
+
+
+
+
         System.out.println();
 
         //Zadanie 7.3
