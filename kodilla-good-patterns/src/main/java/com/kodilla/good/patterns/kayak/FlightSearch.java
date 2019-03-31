@@ -49,7 +49,7 @@ public class FlightSearch {
                 String first = cityFly.get(i);
                 String second = cityFly.get(j);
                 if(flightList.getMapOfFlight().get(second).contains(first)){
-                    System.out.println("lot pośredni do " + city + ": " + first + " " + second + " " + city);
+                    System.out.println("lot pośredni do " + city + ": " + second + " " + first + " " + city);
                 }
             }
         }
