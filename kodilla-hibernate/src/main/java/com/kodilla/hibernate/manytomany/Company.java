@@ -8,9 +8,14 @@ import java.util.List;
 @NamedNativeQuery(
         name = "Company.retrieveCompanyName",
         query = "SELECT company_id, company_name FROM companies" +
-                " WHERE company_name LIKE 'Sof%'",
+                " WHERE company_name LIKE :name",
         resultClass = Company.class
 )
+
+//@NamedQuery(
+//        name = "Company.retrieveCompanyName",
+//        query = "FROM Company WHERE company_name LIKE '%Sof%'"
+//)
 
 @Entity
 @Table(name = "COMPANIES")

@@ -2,6 +2,7 @@ package com.kodilla.hibernate.manytomany.dao;
 
 import com.kodilla.hibernate.manytomany.Company;
 import com.kodilla.hibernate.manytomany.Employee;
+import com.kodilla.hibernate.manytomany.facade.SearechCompanyAndWorkerFacade;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -9,11 +10,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import java.util.List;
-
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class CompanyDaoTestSuite {
+public class CompanyDaoExampleSuite {
     @Autowired
     CompanyDao companyDao;
 
@@ -51,15 +50,10 @@ public class CompanyDaoTestSuite {
         companyDao.save(greyMatter);
         int greyMatterId = greyMatter.getId();
 
-        List<Employee> lastname = employeeDao.retrieveEmployeeByName("Smith");
-        List<Company> companyName = companyDao.retrieveCompanyName();
-
         //Then
         Assert.assertNotEquals(0, softwareMachineId);
         Assert.assertNotEquals(0, dataMaestersId);
         Assert.assertNotEquals(0, greyMatterId);
-        Assert.assertEquals(1, lastname.size());
-        Assert.assertEquals(1, companyName.size());
 
         //CleanUp
         try {
