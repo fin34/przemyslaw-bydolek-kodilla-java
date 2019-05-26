@@ -14,6 +14,6 @@ public class Watch {
 
     @Before("execution(* com.kodilla.patterns2.facade.api.OrderFacade.processOrder(..))")
     public void logEvent() {
-        LOGGER.info("Logging the app");
+        LOGGER.info("Log the app");
     }
 }
