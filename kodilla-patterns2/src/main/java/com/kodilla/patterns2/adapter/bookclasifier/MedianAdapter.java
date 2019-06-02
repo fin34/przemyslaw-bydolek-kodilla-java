@@ -5,7 +5,6 @@ import com.kodilla.patterns2.adapter.bookclasifier.libraryb.Book;
 import com.kodilla.patterns2.adapter.bookclasifier.librarya.Classifier;
 import com.kodilla.patterns2.adapter.bookclasifier.libraryb.BookSignature;
 
-import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
 import java.util.stream.Collectors;

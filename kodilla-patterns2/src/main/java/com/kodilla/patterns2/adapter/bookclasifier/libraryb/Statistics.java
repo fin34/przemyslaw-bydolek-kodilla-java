@@ -20,9 +20,8 @@ public class Statistics implements BookStatistics {
     @Override
     public int medianPublicationYear(Map<BookSignature, Book> books) {
         if(books.isEmpty()) return 0;
-
         List<Integer> publicationYears = books.entrySet().stream()
-                .map(x -> x.getValue().getYearOfPublication())
+                .map(book -> book.getValue().getYearOfPublication())
                 .sorted()
                 .collect(Collectors.toList());
         int middleIndex = publicationYears.size() / 2;
@@ -32,6 +31,4 @@ public class Statistics implements BookStatistics {
             return publicationYears.get(middleIndex);
         }
     }
-
-
 }
