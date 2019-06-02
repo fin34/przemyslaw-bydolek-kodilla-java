@@ -15,14 +15,8 @@ public class MedianAdapter extends MedianAdaptee implements Classifier {
     public int publicationYearMedian(Set<OldBook> oldBookSet) {
         Map<BookSignature, Book> mapBooks = new HashMap<>();
         mapBooks = oldBookSet.stream()
-                .collect(Collectors.toMap(x -> new BookSignature(),
-                        new Book()));
-
-//        Map<BookSignature, Book> mapBooks = new HashMap<>();
-//        for (OldBook oldBook : oldBookSet) {
-//            mapBooks.put(new BookSignature(oldBook.getSignature()),
-//                    new Book(oldBook.getAuthor(), oldBook.getTitle(), oldBook.getPublicationYear()));
-//        }
+                .collect(Collectors.toMap(oldBook -> new BookSignature(oldBook.getSignature()), oldBook->
+                        new Book(oldBook.getAuthor(), oldBook.getTitle(), oldBook.getPublicationYear())));
         return medianPublicationYear(mapBooks);
     }
 }

@@ -18,10 +18,9 @@ public class MedianAdapterTestSuite {
         oldBookSet.add(new OldBook("Stephen King", "Oczy smoka", 1990, "First book"));
         oldBookSet.add(new OldBook("Stephen King", "Zielona mila", 1989, "Second book"));
         oldBookSet.add(new OldBook("Stephen King", "Bastion", 1980, "Third book"));
-        oldBookSet.add(new OldBook("Stephen King", "Lśnienie", 1984, "Third book"));
         //When
         int result = medianAdapter.publicationYearMedian(oldBookSet);
         //Then
-        assertEquals(1986, result);
+        assertEquals(1989, result);
     }
 }
