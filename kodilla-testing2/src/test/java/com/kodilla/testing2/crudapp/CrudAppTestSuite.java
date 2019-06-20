@@ -11,6 +11,7 @@ import org.openqa.selenium.support.ui.Select;
 
 import java.util.Random;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 import static org.junit.Assert.assertTrue;
 
@@ -37,15 +38,11 @@ public class CrudAppTestSuite {
         driver.navigate().refresh();
         while (!driver.findElement(By.xpath("//select[1]")).isDisplayed()) ;
 
-        driver.findElements(By.xpath("//form[@class=\"datatable__row\"]")).stream()
-                .filter(anyForm ->
-                        anyForm.findElement(By.xpath(".//p[@class=\"datatable__field-value\"]"))
-                                .getText().equals(taskName))
+        getWebElementStream(taskName)
                 .forEach(theForm -> {
                     WebElement selectElement = theForm.findElement(By.xpath(".//select[1]"));
                     Select select = new Select(selectElement);
                     select.selectByIndex(1);
-
                     WebElement buttonCreatedCard =
                             theForm.findElement(By.xpath(".//button[contains(@class, \"card-creation\")]"));
                     buttonCreatedCard.click();
@@ -83,16 +80,19 @@ public class CrudAppTestSuite {
 
         Thread.sleep(10000);
 
-        driver.findElements(By.xpath("//form[@class=\"datatable__row\"]")).stream()
-                .filter(anyForm ->
-                        anyForm.findElement(By.xpath(".//p[@class=\"datatable__field-value\"]"))
-                                .getText().equals(taskName))
+        getWebElementStream(taskName)
                 .forEach(theForm -> {
-
                     WebElement buttonDeleteCard =
                             theForm.findElement(By.xpath(".//div[contains(@class, \"section-wrapper\")]/fieldset[1]/button[4]"));
                     buttonDeleteCard.click();
                 });
+    }
+
+    private Stream<WebElement> getWebElementStream(String taskName) {
+        return driver.findElements(By.xpath("//form[@class=\"datatable__row\"]")).stream()
+                .filter(anyForm ->
+                        anyForm.findElement(By.xpath(".//p[@class=\"datatable__field-value\"]"))
+                                .getText().equals(taskName));
     }
 
     private String createCrudAppTestTask() throws InterruptedException {
